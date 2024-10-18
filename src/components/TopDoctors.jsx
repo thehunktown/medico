@@ -13,7 +13,10 @@ const TopDoctors = () => {
       {/* <div className='w-full grid grid-cols-auto gap-4 pt-5 gap-y-6 px-3 sm:px-0'> */}
         {/* slice method is for displayimg maximum doctors in window */}
         {doctors.slice(0,8).map((itm, idx)=> (
-            <div onClick={()=>navigate(`/appointment/${itm._id}`)} className='border border-blue-200 rounded-xl overflow-hidden cursor-pointer hover:translate-y-[-10px] translate-all duration-500' key={idx}>
+            <div  onClick={()=>{
+              navigate(`/appointment/${itm._id}`); scrollTo(0,0);
+               }
+              } className='border border-blue-200 rounded-xl overflow-hidden cursor-pointer hover:translate-y-[-10px] translate-all duration-500' key={idx}>
                 <img className='bg-blue-50' src={itm.image}/>
                 <div className='p-4'>
                     <div className='flex item-center gap-2 text-sm text-center text-green-500'>
